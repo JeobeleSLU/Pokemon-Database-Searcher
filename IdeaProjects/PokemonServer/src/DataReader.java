@@ -32,7 +32,7 @@ public class DataReader {
         String name = attributes[1];
         String primaryType = attributes[2];
         String secondaryType;
-        if (attributes[3].length() != 0) {
+        if (!attributes[3].isEmpty()) {
             secondaryType = attributes[3];
 
         } else {

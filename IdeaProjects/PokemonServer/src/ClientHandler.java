@@ -1,11 +1,15 @@
+import javax.xml.crypto.Data;
 import java.net.Socket;
 import java.io.*;
+import java.util.ArrayList;
 
 public class ClientHandler implements Runnable {
     private final Socket clientSocket;
+    DataReader dataReader = new DataReader();
 
-    public ClientHandler(Socket socket) {
+    public ClientHandler(Socket socket, DataReader reader) {
         this.clientSocket = socket;
+        this.dataReader = reader;
     }
 
 
@@ -28,6 +32,8 @@ public class ClientHandler implements Runnable {
                     out.println("Good bye");
                     break;
                 }
+                ArrayList<String> strings = dataReader.fetchDatabase();
+                strings.forEach(e-> out.println(e));
             }
             out.println("Good bye!");
         } catch (IOException e) {

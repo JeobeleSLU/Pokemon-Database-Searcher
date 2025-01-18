@@ -22,7 +22,7 @@ public class DataReader {
             System.out.println("Data base not fetched");
             e.printStackTrace();
         }
-        return null;
+        return temp;
     }
 
     private String createPokemonFromDatabase(String line) {

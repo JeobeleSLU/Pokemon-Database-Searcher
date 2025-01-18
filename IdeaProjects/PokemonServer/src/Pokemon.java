@@ -1,10 +1,10 @@
 public class Pokemon {
     //number,name,type1,type2,total,hp,attack,defense,sp_attack,sp_defense,speed,generation,legendary
     int number,maxHp,attack,defense,spDefense,spAttack,speed,generation;
-    String name;
+    String name,primaryType,secondaryType;
     boolean isLegendary;
 
-    public Pokemon(int number, int maxHp, int attack, int defense, int spDefense, int spAttack, int speed, int generation, String name, boolean isLegendary) {
+    public Pokemon(int number, String name,String primaryType,String secondaryType, int maxHp, int attack, int defense, int spAttack, int spDefense,  int speed, int generation, boolean isLegendary) {
         this.number = number;
         this.maxHp = maxHp;
         this.attack = attack;
@@ -15,6 +15,24 @@ public class Pokemon {
         this.generation = generation;
         this.name = name;
         this.isLegendary = isLegendary;
+        this.primaryType = primaryType;
+        this.secondaryType = secondaryType;
+    }
+
+    public String getPrimaryType() {
+        return primaryType;
+    }
+
+    public void setPrimaryType(String primaryType) {
+        this.primaryType = primaryType;
+    }
+
+    public String getSecondaryType() {
+        return secondaryType;
+    }
+
+    public void setSecondaryType(String secondaryType) {
+        this.secondaryType = secondaryType;
     }
 
     public int getNumber() {

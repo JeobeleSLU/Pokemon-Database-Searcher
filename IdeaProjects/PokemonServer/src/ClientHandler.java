@@ -17,8 +17,8 @@ public class ClientHandler implements Runnable {
     public void run() {
         //Do something
         try {
-            ArrayList<String> strings = new ArrayList<>();
-                    strings.addAll(dataReader.fetchDatabase());
+            ArrayList<Pokemon> pokemons = new ArrayList<>();
+                    pokemons.addAll(dataReader.fetchDatabase());
             BufferedReader input = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 
@@ -32,8 +32,7 @@ public class ClientHandler implements Runnable {
                 if (temp.equals("1")){
                     out.println("Number 1 is ");
                     out.println("Good bye");
-
-                    System.out.println("String values:" + strings.size());
+                    pokemons.forEach(e->out.println(e.getName()) );
                     break;
                 }
 
